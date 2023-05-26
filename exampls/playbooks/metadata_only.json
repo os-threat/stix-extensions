@@ -1,0 +1,26 @@
+{
+    "type": "playbook",
+    "spec_version": "1.1",
+    "id": "playbook--6b74199d-42a6-43a1-99cb-75d52207a778",
+    "name": "Prevent FuzzyPanda Malware",
+    "description": "This playbook will block traffic to the FuzzyPanda data exfil site",
+    "playbook_types": [
+        "prevention"
+    ],
+    "created_by": "identity--1191b708-423b-493a-bc2c-44ad792e68fe",
+    "created": "2021-04-19T23:32:24.399Z",
+    "modified": "2021-04-19T23:32:24.399Z",
+    "valid_from": "2021-04-19T23:32:24.39964Z",
+    "valid_until": "2021-12-31T23:59:59.999999Z",
+    "derived_from": [
+        "playbook--245806d8-d137-48d1-afe2-e534add32e0c"
+    ],
+    "priority": 3,
+    "severity": 70,
+    "impact": 5,
+    "labels": [
+        "malware",
+        "fuzzypanda",
+        "apt"
+    ]
+}
