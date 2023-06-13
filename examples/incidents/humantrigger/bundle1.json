@@ -1,0 +1,55 @@
+{
+    "type": "bundle",
+    "id": "bundle--b72fa03b-d1e0-4f34-81f0-f60e7f019818",
+    "objects": [
+        {
+            "type": "incident",
+            "id": "incident--1a074418-9248-4a21-9918-a79d0f1dbc5b",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified":"2020-10-19T01:01:01.000Z",
+            "created_by_ref": "identity--2242662b-d581-4864-8696-fff719dc0500",
+            "spec_version": "2.1",
+            "name": "An example incident with human triggered suspicious email",
+            "description": "We blocked an email with a potentially malicious attachment but haven't had time to look to determine if Indicators should be generated from these or not",
+            "extensions": {
+                "extension-definition--ef765651-680c-498d-9894-99799f2fa126": {
+                    "extension_type": "property-extension",
+                    "investigation_status": "new",
+                    "determination": "suspected",
+                    "detection_methods": ["user-report"],
+                    "detection_system": "ServiceNOW",
+                    "defender_activities": [
+                    ],
+                  "events": [
+                        {
+                            "event_ref": "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec"
+                        }
+                    ]
+                }
+            }
+        },
+       {
+            "type": "event",
+            "id": "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified":"2020-10-19T02:12:23.000Z",
+            "spec_version": "2.1",
+            "name": "Potential Phishing email",
+            "status": "occurred",
+            "description": "A suspicious email was reported",
+            "start_time": "2020-10-15T06:00:00.000Z",
+            "start_time_fidelity": "day",
+            "end_time": "2020-10-15T06:00:00.000Z",
+            "end_time_fidelity": "day",
+            "event_seq": 1,
+            "subevents": [],
+            "detection_methods": ["user-report"],
+            "detection_system": "ServiceNOW",
+            "extensions": {
+                "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
+                    "extension_type": "new-sdo"
+                }
+            }
+        }
+    ]
+}
