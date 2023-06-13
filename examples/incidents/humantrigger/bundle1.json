@@ -16,8 +16,6 @@
                     "extension_type": "property-extension",
                     "investigation_status": "new",
                     "determination": "suspected",
-                    "detection_methods": ["user-report"],
-                    "detection_system": "ServiceNOW",
                     "defender_activities": [
                     ],
                   "events": [
@@ -45,6 +43,7 @@
             "subevents": [],
             "detection_methods": ["user-report"],
             "detection_system": "ServiceNOW",
+            "detection_rule": "the sender looks odd",
             "extensions": {
                 "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
                     "extension_type": "new-sdo"
