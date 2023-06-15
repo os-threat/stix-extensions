@@ -446,6 +446,92 @@
             "spec_version": "2.1"
         },
         {
+            "type": "task",
+            "id": "task--2d254737-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "name": "Pivot on existing ",
+            "task_type": "parallel",
+            "priority": 8,
+            "external_references": [],
+            "owner": "identity--023d105b-752e-4cc c-941c-7d3f3cb15e9e",
+            "task_types": [
+                "external-intelligence"
+            ],
+            "next_steps": [],
+            "outcome": "successful",
+            "description": "Using OSINT for enrichment",
+            "start_time": "2020-10-15T01:01:01.000Z",
+            "end_time": "2020-10-15T01:01:01.000Z",
+            "on_success": "",
+            "extensions": {
+                "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
+                    "extension_type": "new-sdo"
+                }
+            }
+        },
+        {
+            "type": "evidence",
+            "id": "evidence--2d254777-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "evidence_type": "context",
+            "name": "Web Proxy Activity for URL",
+            "description": "The data collected automatically from internal systems to enrich the incident",
+            "source": "webproxy",
+            "object_refs": []
+        },
+        {
+            "type": "evidence",
+            "id": "evidence--2d2541111-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "evidence_type": "enrichment",
+            "name": "ciao",
+            "description": "The data collected from external sources to enrich the incident",
+            "source": "ciao",
+            "object_refs": []
+        },
+        {
+            "type": "evidence",
+            "id": "evidence--2d2542222-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "evidence_type": "blacklist",
+            "name": "ciao",
+            "description": "The data collected from external sources that blacklist any IoC's involved in the incident",
+            "source": "ciao",
+            "object_refs": []
+        },
+              {
+            "type": "evidence",
+            "id": "evidence--2d2543333-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "evidence_type": "hunt",
+            "name": "ciao",
+            "description": "The data collected from internal systems during a hunt for additional context",
+            "source": "ciao",
+            "object_refs": []
+        },
+              {
+            "type": "evidence",
+            "id": "evidence--2d254444-fbf8-4969-addd-80ac5c293f57",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "evidence_type": "pattern",
+            "name": "ciao",
+            "description": "Matching to known patterns (Tactics, Techniques and Procedures) of behaviour",
+            "source": "ciao",
+            "object_refs": []
+        },
+        {
             "type": "identity",
             "spec_version": "2.1",
             "id": "identity--023d105b-752e-4e3c-941c-7d3f3cb15e9e",
