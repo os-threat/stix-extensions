@@ -71,7 +71,7 @@
       "spec_version": "2.1",
       "name": "Potential Phishing email",
       "status": "occurred",
-      "description": "A suspicious email was reported",
+      "description": "A suspicious email was found in FortiSIEM alerts",
       "start_time": "2020-10-15T06:00:00.000Z",
       "start_time_fidelity": "day",
       "end_time": "2020-10-15T06:00:00.000Z",
