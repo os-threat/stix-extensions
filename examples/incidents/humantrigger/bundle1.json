@@ -10,7 +10,7 @@
             "created_by_ref": "identity--2242662b-d581-4864-8696-fff719dc0500",
             "spec_version": "2.1",
             "name": "An example incident with human triggered suspicious email",
-            "description": "We blocked an email with a potentially malicious attachment but haven't had time to look to determine if Indicators should be generated from these or not",
+            "description": "A user has reported a suspicious phishing email, possibly a company wide campaign",
             "extensions": {
                 "extension-definition--ef765651-680c-498d-9894-99799f2fa126": {
                     "extension_type": "property-extension",
@@ -49,6 +49,79 @@
                     "extension_type": "new-sdo"
                 }
             }
+        },
+        {
+           "type":"email-message",
+           "spec_version":"2.1",
+           "id":"email-message--0c57a381-2a17-5e61-8754-5ef96efb286c",
+           "from_ref":"email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
+           "to_refs":[
+              "email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868"
+           ],
+           "is_multipart":false,
+           "date":"2004-04-19T12:22:23.000Z",
+           "subject":"Password Expiration Warning",
+           "body": "Please change your password for Office 365: http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa",
+           "additional_header_fields":{
+              "Reply-To":[
+                 "admin@microsft.support.com",
+                 "help@microsft.support.com"
+              ]
+           }
+        },
+        {
+           "type":"email-addr",
+           "spec_version":"2.1",
+           "id":"email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
+           "value":"admin@microsft.support.com",
+           "display_name":"Microsoft Support"
+        },
+        {
+           "type":"email-addr",
+           "spec_version":"2.1",
+           "id":"email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868",
+           "value":"help@microsft.support.com",
+           "display_name":"Microsoft Help"
+        },
+        {
+            "type": "sighting",
+            "spec_version": "2.1",
+            "id": "sighting--55183679-1f1d-4824-af63-72ec2ef855a0",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "sighting_of_ref": "attack-pattern--d742a578-d70e-4d0e-96a6-02a9c30204e6"
+        },
+        {
+            "type": "event",
+            "id": "event--44728578-a89c-41de-b934-17fec1bd30d7",
+            "created": "2020-10-19T01:01:01.000Z",
+            "modified": "2020-10-19T01:01:01.000Z",
+            "spec_version": "2.1",
+            "name": "Phishing emails to multiple users",
+            "status": "occurred",
+            "sighting_refs": ["sighting--9af0cfab-2dfe-448d-a4e3-85ae0af3149c"],
+            "description": "A phishing campaign to multiple useres in our org",
+            "extensions": {
+                "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
+                    "extension_type": "new-sdo"
+                }
+            }
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
+            "created": "2014-06-29T13:49:37.079Z",
+            "modified": "2014-06-29T13:49:37.079Z",
+            "name": "Malicious phishing page",
+            "description": "This webpage was delivered via email",
+            "indicator_types": [
+                "suspicious-activity"
+            ],
+            "pattern": "[url:value = 'http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa']",
+            "pattern_type": "stix",
+            "valid_from": "2014-06-29T13:49:37.079Z"
         }
+
     ]
 }
