@@ -1,209 +1,258 @@
 {
-    "type": "bundle",
-    "id": "bundle--b72fa03b-d1e0-4f34-81f0-f60e7f019818",
-    "objects": [
-        {
-            "type": "incident",
-            "id": "incident--1a074418-9248-4a21-9918-a79d0f1dbc5b",
-            "created": "2020-10-19T01:01:01.000Z",
-            "modified":"2020-10-19T01:01:01.000Z",
-            "created_by_ref": "identity--2242662b-d581-4864-8696-fff719dc0500",
-            "spec_version": "2.1",
-            "name": "An example incident with human triggered suspicious email",
-            "criticality": 80,
-            "description": "A user has reported a suspicious phishing email, possibly a company wide campaign",
-            "extensions": {
-                "extension-definition--ef765651-680c-498d-9894-99799f2fa126": {
-                    "extension_type": "property-extension",
-                    "investigation_status": "new",
-                    "blocked": false,
-                    "malicious": true,
-                    "determination": "suspected",
-                    "incident-types": ["hosting-phishing-sites","theft-access-credentials","known-malware"],
-                    "impacted_entity_counts": [{"individual": 10,"organization": 1,"system": 5}],
-                    "scores": [{"name": "SOC scoring", "value": 6,"description": "A phishing email is ranked 6/10"}],
-                    "event_refs": ["event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec"],
-                    "task_refs":["task--2d254737-fbf8-4969-adb3-80ac5c293f57"],
-                    "impact_refs": ["impact--1032f48b-28d1-451f-970e-78b736db8e13"],
-                    "notes_refs": []
-                }
+  "type": "bundle",
+  "id": "bundle--b72fa03b-d1e0-4f34-81f0-f60e7f019818",
+  "objects": [
+    {
+      "type": "incident",
+      "id": "incident--1a074418-9248-4a21-9918-a79d0f1dbc5b",
+      "created": "2020-10-19T01:01:01.000Z",
+      "modified": "2020-10-19T01:01:01.000Z",
+      "created_by_ref": "identity--2242662b-d581-4864-8696-fff719dc0500",
+      "spec_version": "2.1",
+      "name": "An example incident with human triggered suspicious email",
+      "criticality": 80,
+      "description": "A user has reported a suspicious phishing email, possibly a company wide campaign",
+      "extensions": {
+        "extension-definition--ef765651-680c-498d-9894-99799f2fa126": {
+          "extension_type": "property-extension",
+          "investigation_status": "new",
+          "blocked": false,
+          "malicious": true,
+          "determination": "suspected",
+          "incident-types": [
+            "hosting-phishing-sites",
+            "theft-access-credentials",
+            "known-malware"
+          ],
+          "impacted_entity_counts": [
+            {
+              "individual": 10,
+              "organization": 1,
+              "system": 5
             }
-        },
-      {
-
-      },
-       {
-            "type": "event",
-            "id": "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec",
-            "created": "2020-10-19T01:01:01.000Z",
-            "modified":"2020-10-19T02:12:23.000Z",
-            "spec_version": "2.1",
-            "name": "Potential Phishing email",
-            "status": "occurred",
-            "description": "A suspicious email was reported",
-            "start_time": "2020-10-15T06:00:00.000Z",
-            "start_time_fidelity": "day",
-            "end_time": "2020-10-15T06:00:00.000Z",
-            "end_time_fidelity": "day",
-            "event_seq": 1,
-            "subevents": [],
-            "detection_methods": ["user-report"],
-            "detection_system": "ServiceNOW",
-            "detection_rule": "the sender looks suspicious",
-            "extensions": {
-                "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
-                    "extension_type": "new-sdo"
-                }
+          ],
+          "scores": [
+            {
+              "name": "SOC scoring",
+              "value": 6,
+              "description": "A phishing email is ranked 6/10"
             }
-        },
-        {
-           "type":"email-message",
-           "spec_version":"2.1",
-           "id":"email-message--0c57a381-2a17-5e61-8754-5ef96efb286c",
-           "from_ref":"email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
-           "to_refs":[
-              "email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868"
-           ],
-           "is_multipart":false,
-           "date":"2004-04-19T12:22:23.000Z",
-           "subject":"Password Expiration Warning",
-           "body": "Please change your password for Office 365: http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa",
-           "additional_header_fields":{
-              "Reply-To":[
-                 "admin@microsft.support.com",
-                 "help@microsft.support.com"
-              ]
-           }
-        },
-        {
-           "type":"email-addr",
-           "spec_version":"2.1",
-           "id":"email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
-           "value":"admin@microsft.support.com",
-           "display_name":"Microsoft Support"
-        },
-        {
-           "type":"email-addr",
-           "spec_version":"2.1",
-           "id":"email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868",
-           "value":"help@microsft.support.com",
-           "display_name":"Microsoft Help"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
-            "created": "2014-06-29T13:49:37.079Z",
-            "modified": "2014-06-29T13:49:37.079Z",
-            "name": "Malicious phishing page",
-            "description": "This webpage was delivered via email",
-            "indicator_types": [
-                "suspicious-activity"
-            ],
-            "pattern": "[url:value = 'http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa']",
-            "pattern_type": "stix",
-            "valid_from": "2014-06-29T13:49:37.079Z"
-        },
-        {
-            "type": "sighting",
-            "spec_version": "2.1",
-            "id": "sighting--55183679-1f1d-4824-af63-72ec2ef855a0",
-            "created": "2020-10-19T01:01:01.000Z",
-            "modified": "2020-10-19T01:01:01.000Z",
-            "sighting_of_ref": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f"
-        },
-        {
-            "type": "event",
-            "id": "event--44728578-a89c-41de-b934-17fec1bd30d7",
-            "created": "2020-10-19T01:01:01.000Z",
-            "modified": "2020-10-19T01:01:01.000Z",
-            "spec_version": "2.1",
-            "name": "Phishing emails to multiple users",
-            "status": "occurred",
-            "sighting_refs": ["sighting--9af0cfab-2dfe-448d-a4e3-85ae0af3149c"],
-            "description": "A phishing campaign to multiple users in our org",
-            "extensions": {
-                "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
-                    "extension_type": "new-sdo"
-                }
-            }
-        },
-        {
-            "type": "task",
-            "id": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
-            "created": "2020-10-19T01:01:01.000Z",
-            "modified":"2020-10-19T01:01:01.000Z",
-            "spec_version": "2.1",
-            "task_types": ["discovery"],
-            "outcome": "successful",
-            "description": "Recover the original email described from the user",
-            "start_time": "2020-10-15T01:01:01.000Z",
-            "end_time": "2020-10-15T01:01:01.000Z",
-            "extensions": {
-                "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
-                    "extension_type": "new-sdo"
-                }
-            }
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbb",
-            "created": "2022-05-06T01:01:01.000Z",
-            "modified": "2022-05-06T01:01:01.000Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
-            "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbd",
-            "created": "2022-05-06T01:01:01.000Z",
-            "modified": "2022-05-06T01:01:01.000Z",
-            "relationship_type": "impacted",
-            "source_ref": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
-            "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
-        },
-      {
-          "type": "identity",
-          "spec_version": "2.1",
-          "id": "identity--023d105b-752e-4e3c-941c-7d3f3cb15e9e",
-          "created": "2016-04-06T20:03:00.000Z",
-          "modified": "2016-04-06T20:03:00.000Z",
-          "name": "John Smith",
-          "identity_class": "individual",
-          "contact_information": "john@contoso.com"
-        },
-        {
-          "type": "identity",
-          "spec_version": "2.1",
-          "id": "identity--023d105b-752e-4e3c-941c-7d3f3cb15e99",
-          "created": "2016-04-06T20:03:00.000Z",
-          "modified": "2016-04-06T20:03:00.000Z",
-          "name": "Tim Peak",
-          "identity_class": "individual",
-          "contact_information": "tim@contoso.com"
-        },
-        {
-            "type": "impact",
-            "id": "impact--1032f48b-28d1-451f-970e-78b736db8e13",
-            "created": "2022-05-06T01:01:01.002Z",
-            "modified":"2022-05-06T01:01:01.002Z",
-            "spec_version": "2.1",
-            "description": "A list of users from our organization were succesfully compromised",
-            "recoverability": "supplemented",
-            "impacted_refs": ["identity--023d105b-752e-4e3c-941c-7d3f3cb15e9e","identity--023d105b-752e-4e3c-941c-7d3f3cb15e99"],
-            "impact_category": "confidentiality",
-            "extensions": {
-                "extension-definition--7cc33dd6-f6a1-489b-98ea-522d351d71b9": {
-                    "extension_type": "new-sdo"
-                },
-                "information_type": "credentials-user",
-                "loss-type": "confirmed-loss",
-                "record_count": 10
-
-            }
+          ],
+          "event_refs": [
+            "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec"
+          ],
+          "task_refs": [
+            "task--2d254737-fbf8-4969-adb3-80ac5c293f57"
+          ],
+          "impact_refs": [
+            "impact--1032f48b-28d1-451f-970e-78b736db8e13"
+          ],
+          "notes_refs": ["note--0c7b5b88-8ff7-4a4d-aa9d-feb398cd0061"]
         }
-    ]
+      }
+    },
+    {},
+    {
+      "type": "event",
+      "id": "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec",
+      "created": "2020-10-19T01:01:01.000Z",
+      "modified": "2020-10-19T02:12:23.000Z",
+      "spec_version": "2.1",
+      "name": "Potential Phishing email",
+      "status": "occurred",
+      "description": "A suspicious email was reported",
+      "start_time": "2020-10-15T06:00:00.000Z",
+      "start_time_fidelity": "day",
+      "end_time": "2020-10-15T06:00:00.000Z",
+      "end_time_fidelity": "day",
+      "event_seq": 1,
+      "subevents": [],
+      "detection_methods": [
+        "user-report"
+      ],
+      "detection_system": "ServiceNOW",
+      "detection_rule": "the sender looks suspicious",
+      "extensions": {
+        "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
+          "extension_type": "new-sdo"
+        }
+      }
+    },
+    {
+      "type": "email-message",
+      "spec_version": "2.1",
+      "id": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c",
+      "from_ref": "email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
+      "to_refs": [
+        "email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868"
+      ],
+      "is_multipart": false,
+      "date": "2004-04-19T12:22:23.000Z",
+      "subject": "Password Expiration Warning",
+      "body": "Please change your password for Office 365: http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa",
+      "additional_header_fields": {
+        "Reply-To": [
+          "admin@microsft.support.com",
+          "help@microsft.support.com"
+        ]
+      }
+    },
+    {
+      "type": "email-addr",
+      "spec_version": "2.1",
+      "id": "email-addr--9b7e29b3-fd8d-562e-b3f0-8fc8134f5dda",
+      "value": "admin@microsft.support.com",
+      "display_name": "Microsoft Support"
+    },
+    {
+      "type": "email-addr",
+      "spec_version": "2.1",
+      "id": "email-addr--d1b3bf0c-f02a-51a1-8102-11aba7959868",
+      "value": "help@microsft.support.com",
+      "display_name": "Microsoft Help"
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--0c7b5b88-8ff7-4a4d-aa9d-feb398cd0061",
+      "created": "2016-05-12T08:17:27.000Z",
+      "modified": "2016-05-12T08:17:27.000Z",
+      "external_references": [
+        {
+          "source_name": "job-tracker",
+          "external_id": "job-id-1234"
+        }
+      ],
+      "abstract": "Tracking Team Note#1",
+      "content": "I asked the user to send me the EML file of the original email that he tagged as suspicious. The user said he didn't click on the link.",
+      "authors": [
+        "John Doe"
+      ],
+      "object_refs": [
+        "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
+      ]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
+      "created": "2014-06-29T13:49:37.079Z",
+      "modified": "2014-06-29T13:49:37.079Z",
+      "name": "Malicious phishing page",
+      "description": "This webpage was delivered via email",
+      "indicator_types": [
+        "suspicious-activity"
+      ],
+      "pattern": "[url:value = 'http://officez365.microsoftz.com/login?user=paolo&tkn=1234&z=aaaaaaa']",
+      "pattern_type": "stix",
+      "valid_from": "2014-06-29T13:49:37.079Z"
+    },
+    {
+      "type": "sighting",
+      "spec_version": "2.1",
+      "id": "sighting--55183679-1f1d-4824-af63-72ec2ef855a0",
+      "created": "2020-10-19T01:01:01.000Z",
+      "modified": "2020-10-19T01:01:01.000Z",
+      "sighting_of_ref": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f"
+    },
+    {
+      "type": "event",
+      "id": "event--44728578-a89c-41de-b934-17fec1bd30d7",
+      "created": "2020-10-19T01:01:01.000Z",
+      "modified": "2020-10-19T01:01:01.000Z",
+      "spec_version": "2.1",
+      "name": "Phishing emails to multiple users",
+      "status": "occurred",
+      "sighting_refs": [
+        "sighting--9af0cfab-2dfe-448d-a4e3-85ae0af3149c"
+      ],
+      "description": "A phishing campaign to multiple users in our org",
+      "extensions": {
+        "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
+          "extension_type": "new-sdo"
+        }
+      }
+    },
+    {
+      "type": "task",
+      "id": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
+      "created": "2020-10-19T01:01:01.000Z",
+      "modified": "2020-10-19T01:01:01.000Z",
+      "spec_version": "2.1",
+      "task_types": [
+        "discovery"
+      ],
+      "outcome": "successful",
+      "description": "Recover the original email described from the user",
+      "start_time": "2020-10-15T01:01:01.000Z",
+      "end_time": "2020-10-15T01:01:01.000Z",
+      "extensions": {
+        "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
+          "extension_type": "new-sdo"
+        }
+      }
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbb",
+      "created": "2022-05-06T01:01:01.000Z",
+      "modified": "2022-05-06T01:01:01.000Z",
+      "relationship_type": "based-on",
+      "source_ref": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
+      "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbd",
+      "created": "2022-05-06T01:01:01.000Z",
+      "modified": "2022-05-06T01:01:01.000Z",
+      "relationship_type": "impacted",
+      "source_ref": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
+      "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--023d105b-752e-4e3c-941c-7d3f3cb15e9e",
+      "created": "2016-04-06T20:03:00.000Z",
+      "modified": "2016-04-06T20:03:00.000Z",
+      "name": "John Smith",
+      "identity_class": "individual",
+      "contact_information": "john@contoso.com"
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--023d105b-752e-4e3c-941c-7d3f3cb15e99",
+      "created": "2016-04-06T20:03:00.000Z",
+      "modified": "2016-04-06T20:03:00.000Z",
+      "name": "Tim Peak",
+      "identity_class": "individual",
+      "contact_information": "tim@contoso.com"
+    },
+    {
+      "type": "impact",
+      "id": "impact--1032f48b-28d1-451f-970e-78b736db8e13",
+      "created": "2022-05-06T01:01:01.002Z",
+      "modified": "2022-05-06T01:01:01.002Z",
+      "spec_version": "2.1",
+      "description": "A list of users from our organization were succesfully compromised",
+      "recoverability": "supplemented",
+      "impacted_refs": [
+        "identity--023d105b-752e-4e3c-941c-7d3f3cb15e9e",
+        "identity--023d105b-752e-4e3c-941c-7d3f3cb15e99"
+      ],
+      "impact_category": "confidentiality",
+      "extensions": {
+        "extension-definition--7cc33dd6-f6a1-489b-98ea-522d351d71b9": {
+          "extension_type": "new-sdo"
+        },
+        "information_type": "credentials-user",
+        "loss-type": "confirmed-loss",
+        "record_count": 10
+      }
+    }
+  ]
 }
