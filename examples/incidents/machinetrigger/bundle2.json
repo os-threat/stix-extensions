@@ -71,7 +71,7 @@
       "spec_version": "2.1",
       "name": "Potential Phishing email",
       "status": "occurred",
-      "description": "A suspicious email was reported",
+      "description": "A suspicious email was found in the FortiSIEM",
       "start_time": "2020-10-15T06:00:00.000Z",
       "start_time_fidelity": "day",
       "end_time": "2020-10-15T06:00:00.000Z",
@@ -79,10 +79,10 @@
       "event_seq": 1,
       "subevents": [],
       "detection_methods": [
-        "user-report"
+        "automated-tool"
       ],
-      "detection_system": "ServiceNOW",
-      "detection_rule": "the sender looks suspicious",
+      "detection_system": "FortiMail",
+      "detection_rule": "Phishing.Rule",
       "extensions": {
         "extension-definition--4ca6de00-5b0d-45ef-a1dc-ea7279ea910e": {
           "extension_type": "new-sdo"
