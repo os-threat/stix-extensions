@@ -215,6 +215,16 @@
       "start_time": "2020-10-15T01:01:01.000Z",
       "end_time": "2020-10-15T01:01:01.000Z",
       "on_success": "task--2d254737-fbf8-4969-addd-80ac5c293f57",
+      "changed_objects": [
+          {
+              "state_change_type": "output",
+              "result_ref": "file--e277603e-1060-5ad4-9937-c26c97f1ca68"
+          },
+          {
+              "state_change_type": "output",
+              "result_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
+          }
+      ],
       "extensions": {
         "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
           "extension_type": "new-sdo"
@@ -229,26 +239,6 @@
       "modified": "2022-05-06T01:01:01.000Z",
       "relationship_type": "based-on",
       "source_ref": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
-      "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
-    },
-    {
-      "type": "relationship",
-      "spec_version": "2.1",
-      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbd",
-      "created": "2022-05-06T01:01:01.000Z",
-      "modified": "2022-05-06T01:01:01.000Z",
-      "relationship_type": "impacted",
-      "source_ref": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
-      "target_ref": "file--e277603e-1060-5ad4-9937-c26c97f1ca68"
-    },
-    {
-      "type": "relationship",
-      "spec_version": "2.1",
-      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432abd",
-      "created": "2022-05-06T01:01:01.000Z",
-      "modified": "2022-05-06T01:01:01.000Z",
-      "relationship_type": "impacted",
-      "source_ref": "task--2d254737-fbf8-4969-adb3-80ac5c293f57",
       "target_ref": "email-message--0c57a381-2a17-5e61-8754-5ef96efb286c"
     },
     {
@@ -275,6 +265,16 @@
           "extension_type": "new-sdo"
         }
       }
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7aebe2f0-28d6-48a2-9c3e-b0aaa6026666",
+      "created": "2016-05-09T08:17:27.000Z",
+      "modified": "2016-05-09T08:17:27.000Z",
+      "relationship_type": "detects",
+      "source_ref": "task--2d254737-fbf8-4969-addd-80ac5c293f57",
+      "target_ref": "event--84ede1e8-aa78-4c63-98cd-02f4387fc1ec"
     },
     {
       "type": "event",
@@ -523,21 +523,17 @@
       "start_time": "2020-10-15T01:01:01.000Z",
       "end_time": "2020-10-15T01:01:01.000Z",
       "on_success": "task--2d254737-fbff-4969-bbbb-80ac5c293f57",
+      "changed_objects": [
+        {
+          "state_change_type": "output",
+          "result_ref": "evidence--2d254777-fbf8-4969-addd-80ac5c293f57"
+        }
+      ],
       "extensions": {
         "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
           "extension_type": "new-sdo"
         }
       }
-    },
-    {
-      "type": "relationship",
-      "spec_version": "2.1",
-      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbb",
-      "created": "2022-05-06T01:01:01.000Z",
-      "modified": "2022-05-06T01:01:01.000Z",
-      "relationship_type": "led-to",
-      "source_ref": "task--2d254737-fbff-4969-addd-80ac5c293f57",
-      "target_ref": "evidence--2d254777-fbf8-4969-addd-80ac5c293f57"
     },
     {
       "type": "evidence",
@@ -572,21 +568,17 @@
       "start_time": "2020-10-15T01:01:01.000Z",
       "end_time": "2020-10-15T01:01:01.000Z",
       "on_success": "task--2d254737-fbff-4969-bbbb-80ac5c293f57",
+      "changed_objects": [
+        {
+          "state_change_type": "output",
+          "result_ref": "evidence--2d254777-fbf8-4969-addd-80ac5c293f57"
+        }
+      ],
       "extensions": {
         "extension-definition--2074a052-8be4-4932-849e-f5e7798e0030": {
           "extension_type": "new-sdo"
         }
       }
-    },
-    {
-      "type": "relationship",
-      "spec_version": "2.1",
-      "id": "relationship--dddcb3d1-0e56-4170-97e2-eb79da432cbb",
-      "created": "2022-05-06T01:01:01.000Z",
-      "modified": "2022-05-06T01:01:01.000Z",
-      "relationship_type": "led-to",
-      "source_ref": "task--2d254737-fbff-4969-addd-80ac5c293f57",
-      "target_ref": "evidence--2d254777-fbf8-4969-addd-80ac5c293f57"
     },
     {
       "type": "evidence",
